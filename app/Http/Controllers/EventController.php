@@ -4,15 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    
     public function index()
     {
-        //
+        $fields = [
+            [
+                'name' => 'name',
+                'label' => 'Name',
+                'type' => 'text',
+                'required' => true
+            ],
+            [
+                'name' => 'email',
+                'label' => 'Email',
+                'type' => 'email',
+                'required' => true
+            ],
+            [
+                'name' => 'password',
+                'label' => 'Password',
+                'type' => 'password',
+                'required' => true
+            ]
+        ];
+
+        return response()->json(['fields' => $fields]);
     }
 
     /**

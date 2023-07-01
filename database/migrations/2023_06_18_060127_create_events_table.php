@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->title();
-            $table->location();
-            $table->description();
-            $table->event_uuid();
+            $table->string('title');
+            $table->string('location');
+            $table->string('description');
+            $table->integer('event_uuid');
             $table->timestamps();
         });
     }
